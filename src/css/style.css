@@ -1,0 +1,58 @@
+button[data-start],
+button[data-stop] {
+  display: block;
+  margin: 80px auto;
+  padding: 15px 15px;
+  font-size: 26px;
+  background-color: blue;
+  border: 1px solid yellow;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(16, 9, 9, 0, 5);
+}
+
+button:disabled {
+  opacity: 0, 5;
+  cursor: not-allowed;
+  box-shadow: none;
+  color: grey;
+  background-color: lightgray;
+  border-color: grey;
+  box-shadow: 0 0 0 1px rgba(16, 9, 9, 0, 2);
+}
+
+.timer {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+
+  border: 1px solid yellow;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#datetime-picker {
+  display: block;
+  margin: 0px auto;
+
+  text-align: center;
+  font-size: 60px;
+}
+
+.label {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+}
