@@ -6,9 +6,9 @@ import "flatpickr/dist/flatpickr.min.css";
 
 let getRef = (selector) => document.querySelector(selector);
 const inputDatePickerRef = getRef("#datetime-picker");
-const btnStartRef = getRef("data-start");
+const btnStartRef = getRef("[data-start]");
 const daysRef = getRef("[data-days]");
-const hoursRef = getRef("[data-hour]");
+const hoursRef = getRef("[data-hours]");
 const minutesRef = getRef("[data-minutes]");
 const secondsRef = getRef("[data-seconds]");
 
@@ -56,7 +56,7 @@ function currentDifferenceDate(selectedDates) {
 
   if (selectedDates < currentDate) {
     btnStartRef.setAttribute("disabled", true);
-    return Notify.failure("Please choose some date from future!");
+    return Notify.failure("Please choose a date in the future");
   }
 
   timeDifference = selectedDates.getTime() - currentDate;
@@ -73,7 +73,7 @@ function startTimer() {
   timeDifference -= 1000;
 
   if (secondsRef.textContent <= 0 && minutesRef.textContent <= 0) {
-    Notify.success("End of time");
+    Notify.success("Time end");
     clearInterval(timerId);
   } else {
     formatDate = convertMs(timeDifference);
