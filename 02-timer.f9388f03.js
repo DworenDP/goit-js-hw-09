@@ -531,7 +531,7 @@ const options = {
     }
 };
 btnStartRef.setAttribute("disabled", true);
-const flatpickr = (0, _flatpickrDefault.default)(inputDatePickerRef, options);
+(0, _flatpickrDefault.default)(inputDatePickerRef, options);
 btnStartRef.addEventListener("click", onBtnStart);
 window.addEventListener("keydown", (e)=>{
     if (e.code === "Escape" && timerId) {
