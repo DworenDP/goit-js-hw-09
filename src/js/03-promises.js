@@ -12,9 +12,17 @@ function submitData(e) {
   for (let i = 1; i <= +amount.value; i += 1) {
     const stepForPromise = +delay.value * (i - 1);
     setTimeout(() => {
-      createPromise(i, stepForPromise).then(({ position, delay }) => {
-        Notiflix.Notify.success(`Fulfilled promise ${position} in ${delay}ms`);
-      });
+      createPromise(i, stepForPromise)
+        .then(({ position, delay }) => {
+          Notiflix.Notify.success(
+            `✅ Fulfilled promise ${position} in ${delay}ms`
+          );
+        })
+        .catch(({ position, delay }) => {
+          Notiflix.Notify.failure(
+            `❌ Rejected promise ${position} in ${delay}ms`
+          );
+        });
     }, stepForPromise);
   }
   e.currentTarget.reset();
