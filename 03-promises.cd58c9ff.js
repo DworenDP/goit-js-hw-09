@@ -515,7 +515,9 @@ function submitData(e) {
         const stepForPromise = +delay1.value * (i - 1);
         setTimeout(()=>{
             createPromise(i, stepForPromise).then(({ position , delay  })=>{
-                (0, _notiflixDefault.default).Notify.success(`Fulfilled promise ${position} in ${delay}ms`);
+                (0, _notiflixDefault.default).Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
+            }).catch(({ position , delay  })=>{
+                (0, _notiflixDefault.default).Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
             });
         }, stepForPromise);
     }
